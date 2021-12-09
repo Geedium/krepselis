@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-header">Pridėti naują užduotį</div>
+  <div class="card-body">
+    <div class="form">
+      <div class="mb-3">
+        <label for="name" class="form-label">Užduoties pavadinimas: </label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          id="name"
+          value=""
+          #name
+        />
+      </div>
+      <div class="mb-3">
+        <label for="kind" class="form-label">Užduoties tipas: </label>
+        <select class="form-select form-select-sm" name="kind" id="kind" #kind>
+          <option value="0" selected>Rutininis</option>
+          <option value="1">Neskubus</option>
+          <option value="2">Skubus</option>
+          <option value="3">Ypač skubus</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" (click)="addTask(name, kind)">
+        Pridėti užduotį
+      </button>
+    </div>
+  </div>
+</div>

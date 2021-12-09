@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header">Užduočių sąrašas</div>
+  <div class="card-body">
+    <table class="table">
+      <tr>
+        <th>Nr.</th>
+        <th>Pavadinimas</th>
+        <th>Tipas</th>
+        <th></th>
+      </tr>
+      <tbody>
+        <tr *ngFor="let task of taskService.getTasks(); let i = index">
+          <td>{{ i + 1 }}.</td>
+          <td>{{ task.name }}</td>
+          <td>{{ task.kind }}</td>
+          <td>
+            <button
+              class="btn btn-sm btn-outline-primary"
+              (click)="taskService.removeTask(i)"
+            >
+              Ištrinti
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td *ngIf="!taskService.getTasks()" colspan="4">
+            <div class="mx-auto text-center">
+              <span>Užduočių nėra!</span>
+              <a class="px-2" href="/add">Pridėti užduotį</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

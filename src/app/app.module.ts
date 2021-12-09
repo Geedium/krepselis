@@ -3,25 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { AddProductComponent } from './components/add-product/add-product.component';
-import { ViewProductsComponent } from './components/view-products/view-products.component';
+import { ViewTasksComponent } from './view-tasks/view-tasks.component';
+import { AddTaskComponent } from './add-task/add-task.component';
 
-const appRoutes:Routes=[
-  {path: '', component:ViewProductsComponent},
-  {path: 'add',component:AddProductComponent}
-]
+const appRoutes: Routes = [
+  { path: '', component: ViewTasksComponent },
+  { path: 'add', component: AddTaskComponent },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddProductComponent,
-    ViewProductsComponent
+    AddTaskComponent,
+    ViewTasksComponent,
+    AddTaskComponent,
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes)
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
